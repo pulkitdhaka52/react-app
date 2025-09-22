@@ -10,6 +10,10 @@ import ProtectedLayout from './Components/Layout/ProtectedLayout';
 import User from './Components/User';
 import Home from './Components/Home';
 import Counter from './Components/Counter';
+import Pagination from './Components/Pagination';
+import FileUploadModule from './Components/FileUpload';
+import Todo from './Components/Todo';
+import Lift from './Components/Lift';
 
 const router = createBrowserRouter([
   { 
@@ -47,7 +51,24 @@ const router = createBrowserRouter([
       {
         path: "/counter",
         element: <Counter/>
+      },
+      {
+        path: "/pagination",
+        element: <Pagination />
+      },
+      {
+        path: "/upload",
+        element:<FileUploadModule />
+      },
+      {
+        path: "/todo",
+        element:<Todo />
+      },
+      {
+        path: "/lift",
+        element:<Lift />
       }
+
     ]
   }
 ])
