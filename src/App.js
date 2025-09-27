@@ -14,6 +14,8 @@ import Pagination from './Components/Pagination';
 import FileUploadModule from './Components/FileUpload';
 import Todo from './Components/Todo';
 import Lift from './Components/Lift';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import PaginationQuery from './Components/PaginationQuery';
 
 const router = createBrowserRouter([
   { 
@@ -67,6 +69,10 @@ const router = createBrowserRouter([
       {
         path: "/lift",
         element:<Lift />
+      },
+      {
+        path: "/paginationQuery",
+        element:<PaginationQuery />
       }
 
     ]
@@ -74,9 +80,13 @@ const router = createBrowserRouter([
 ])
 
 function App() {
+
+  const queryClient = new QueryClient();
   
   return (
-    <RouterProvider router={router} />
+    <QueryClientProvider client={queryClient} >
+      <RouterProvider router={router} />
+    </QueryClientProvider>
   );
 }
 
