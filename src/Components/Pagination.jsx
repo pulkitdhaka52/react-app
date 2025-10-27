@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import useApiCall from "../hooks/useApiCall";
+import useApiCall from "../hooks/useApiCall_";
 
 export default function Pagination() {
     const {data=[], loading, error} = useApiCall("https://jsonplaceholder.typicode.com/users");

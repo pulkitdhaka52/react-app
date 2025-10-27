@@ -1,9 +1,13 @@
 import React from "react";
 import { Outlet, Navigate, Link } from "react-router-dom";
 import useProtectRoute from "../../hooks/useProtectedRoute";
+import {useDispatch, useSelector} from "react-redux";
+import { changeTheme } from "../../store/reducers/themeSlice";
 
 export default function ProtectedLayout(){
     const isAuth = useProtectRoute();
+    const theme = useSelector((state) => state.theme)
+    const dispatch = useDispatch();
 
 
     return ( !!isAuth ? (
@@ -18,6 +22,8 @@ export default function ProtectedLayout(){
                 <Link  to="/todo">Todo</Link>
                 <Link  to="/counter">Counter</Link>
                 <Link  to="/upload">Upload</Link>
+                <Link  to="/gun-game">Gun Game</Link>
+                Theme: <button onClick={()=>dispatch(changeTheme())}>{theme.value}</button>
             </div>
             
         </header>

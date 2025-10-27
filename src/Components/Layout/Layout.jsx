@@ -1,7 +1,11 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
+import {useDispatch, useSelector} from "react-redux";
 
 export default function Layout(){
+    const {theme} = useSelector((state) => state.theme)
+    const dispatch = useDispatch();
+
     return (
         <div>
             <header>

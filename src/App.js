@@ -16,6 +16,8 @@ import Todo from './Components/Todo';
 import Lift from './Components/Lift';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import PaginationQuery from './Components/PaginationQuery';
+import NotFound from './Components/NotFound';
+import GunGame from './Components/GunGame';
 
 const router = createBrowserRouter([
   { 
@@ -73,6 +75,14 @@ const router = createBrowserRouter([
       {
         path: "/paginationQuery",
         element:<PaginationQuery />
+      },
+      {
+        path: "/gun-game",
+        element:<GunGame />
+      },
+      {
+        path: "*",
+        element: <NotFound />
       }
 
     ]
