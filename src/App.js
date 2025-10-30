@@ -18,6 +18,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import PaginationQuery from './Components/PaginationQuery';
 import NotFound from './Components/NotFound';
 import GunGame from './Components/GunGame';
+import Graph from './Components/Graph';
 
 const router = createBrowserRouter([
   { 
@@ -79,6 +80,10 @@ const router = createBrowserRouter([
       {
         path: "/gun-game",
         element:<GunGame />
+      },
+      {
+        path: "/graph",
+        element:<Graph />
       },
       {
         path: "*",
